@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+body{
+    background: #8E959F;
+
+}
+
+.logo{
+    width: 12rem;
+    height: 4rem;
+}
+
+.mainScreen{
+    background: #EEEEEE;
+    width: 100vw;
+    min-height: 100vh;
+    margin-top: 10vh;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    
+}
+
+.tegels{
+    background: #FFFFFF;
+    width: 25rem;
+height: 25rem;
+    flex-shrink: 0;
+    border-radius: 2rem;
+}
+.lang{
+    height: 35rem;
+    width: 15rem;
+}
+
+.drie{
+    height: 16.5rem;
+}
+.tweede{
+    height: 16.5rem;
+    margin-bottom: 2rem;
+}
