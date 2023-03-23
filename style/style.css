@@ -34,13 +34,31 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 1.25rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    
+}
+nav > ul{
+    display: flex;
+    align-items: center;
+}
+nav > ul > li{
+    display: flex;
+    padding: .2rem;
+}
+nav > ul > li > a{
+    flex-shrink: 2;
+    width: 10rem;
+    height: 4.5vh;
+    background: #FFFFFF;
+    margin-top: 8vh;
+    border-top-right-radius: .7rem;
+    border-top-left-radius: .7rem;
 }
 .mainScreen{
     background: #FFFFFF;
     box-shadow: 0 0 30px 0 #AA9C9C;
-    width: 100vw;
+    max-width: 100vw;
     min-height: 87.5vh;
     border-top-right-radius: 2rem;
     border-top-left-radius: 2rem;
@@ -49,35 +67,33 @@ body{
     align-items: center;
     gap: 2rem;
     flex-wrap: wrap;
-    
+    transition: .5s;
+    z-index:2;
+    display: ;
 }
 
 .tegels{
     background: #F8F8F8;
-    box-shadow: 0 0 2px 0 #AA9C9C;
     width: 25rem;
     height: 25rem;
     flex-shrink: 0;
     border-radius: 2rem;
     transition: .3s;
 }
+.tegels:hover{
+    transform: scale(1.1);
+    background: #F3F1F1;
+}
 .lang{
     height: 35rem;
     width: 15rem;
 }
-.lang:hover{
-    height: 37rem;
-    width: 17rem;
-}
+
 .drie{
     height: 16.5rem;
     width: 25rem;
 }
-.tweede:hover,
-.drie:hover{
-    height: 18.5rem;
-    width: 27rem;
-}
+
 .tweede{
     height: 16.5rem;
     width: 25rem;
@@ -89,26 +105,19 @@ body{
     width: 15rem;
     height: 16.5rem;
     flex-shrink: 0;
-}
-.vier{
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 2rem;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4rem;
 }
-.vijf:hover,
-.vier:hover{
-    width: 17rem;
-    height: 18.5rem;
-}
+
+
 .zes{
     height: 16.5rem;
     width: 32rem;
 }
-.zes:hover{
-    height: 18.5rem;
-    width: 34rem;
-}
+
 .derdeRij{
     display: flex;
     gap: 2rem;
@@ -127,14 +136,24 @@ body{
     }
 }
 
-
+.ondergang,
 .opkomst{
     width: 10rem;
     height: 3rem;
-    background: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #707070;
+    font-size: 1.5rem;
 }
-.ondergang{
-    width: 10rem;
-    height: 3rem;
-    background: black;
+
+
+.zon{
+    width:5rem;
+    height:3.5rem;
+}
+
+.huis{
+    width:4rem;
+    height:4rem;
 }
