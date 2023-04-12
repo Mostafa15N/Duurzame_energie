@@ -7,7 +7,7 @@
 
 body{
     background: #B6DFE1;
-
+    font-family: sans-serif;
 }
 
 .logo{
@@ -46,14 +46,18 @@ nav > ul > li{
     display: flex;
     padding: .2rem;
 }
-nav > ul > li > a{
+header > nav > ul > li > a{
     flex-shrink: 2;
-    width: 10rem;
+    width: 10vw;
     height: 4.5vh;
-    background: #FFFFFF;
     margin-top: 8vh;
+    background: #FFFFFF;
     border-top-right-radius: .7rem;
     border-top-left-radius: .7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 .mainScreen{
     background: #FFFFFF;
@@ -66,10 +70,11 @@ nav > ul > li > a{
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     flex-wrap: wrap;
     transition: .5s;
-    z-index:2;
-    display: ;
+    z-index: -3;
 }
 
 .tegels{
@@ -116,6 +121,7 @@ nav > ul > li > a{
 .zes{
     height: 16.5rem;
     width: 32rem;
+    flex-wrap: wrap;
 }
 
 .derdeRij{
@@ -130,21 +136,14 @@ nav > ul > li > a{
     flex-wrap: wrap;
 }
 
-@media screen and (max-width:515px){
-    .tegels{
-        flex-shrink: 1;
-    }
-}
-
 .ondergang,
 .opkomst{
-    width: 10rem;
     height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #707070;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 
@@ -156,4 +155,109 @@ nav > ul > li > a{
 .huis{
     width:4rem;
     height:4rem;
+}
+
+footer > nav > ul > li > a{
+    flex-shrink: 2;
+    width: 20vw;
+    height: 3rem;
+    background: #FFFFFF;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    z-index: 2;
+}
+
+.header2{
+    width: 100vw;
+    height: 5rem;
+    background:#F3F1F1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    bottom: 0;
+    box-shadow: 0 0 30px 0 #AA9C9C;
+}
+
+@media screen and (max-width:515px){
+    .tegels{
+        flex-shrink: 1;
+    }
+}
+
+@media screen and (max-width:750px){
+    .tegels{
+        width: 70vw !important;
+    }
+
+    .mainScreen{
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    .derdeRij,
+    .vierdeRij{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .slider1,
+    .slider2,
+    .slider3,
+    .slider{
+        width: 40% !important;
+    }
+
+    .drie,
+    .zes{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    }
+
+    .Binnentemperatuur{
+        gap: 1rem !important;
+    }
+}
+
+@media screen and (max-width:600px){
+    .EnergieVerbruik{
+        width: 65vw;
+    }
+
+    .EnergieVerbruikApparaten{
+        gap: 3vw !important;
+    }
+
+    .apparaatIcons{
+        gap: .5vw !important;
+    }
+
+    .header > nav > ul > li > a{
+        display: none;
+    }
+
+    .header2{
+        display: flex;
+    }
+
+
+        .header{
+            padding-left: 1rem;
+            padding-right: 1rem;
+            
+        }
+        .mainScreen,
+        .lichtScreen,
+        .temperatuurScreen,
+        .weerScreen{
+            padding-bottom: 7rem !important;
+        } 
+
+        .weer2 > div{
+            width: 100% !important;
+        }
+        
 }

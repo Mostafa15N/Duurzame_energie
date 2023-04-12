@@ -1,0 +1,58 @@
+.lang{
+    color: #707070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: .7rem;
+}
+.woonkamer{
+    width: 4rem;
+    height: 4rem;
+}
+.lang >input{
+    position: relative;
+    width: 75%;
+}
+.slider1,
+.slider2,
+.slider3,
+.slider{
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(90deg, rgb(214,214,214) 10%, rgb(214,214,214) 10%);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  border-radius: 8px;
+  box-shadow: 0px 1px 1px 0px rgb(150, 150, 144);
+}
+
+.lang span{
+   top: 1px;
+}
+
+.slider1:hover,
+.slider2:hover,
+.slider3:hover,
+.slider:hover{
+    
+    opacity: 1;
+}
+.slider1::-webkit-slider-thumb,
+.slider2::-webkit-slider-thumb,
+.slider3::-webkit-slider-thumb,
+.slider::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background:white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+    font-size: 40px;
+}

@@ -4,20 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Electro</title>
+    <link rel="icon" href="img\logo_icon2.png" type="image/logo">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="js\main.js" defer></script>
     <link rel="stylesheet" href="style\style.css">
     <link rel="stylesheet" href="style\weer.css">
+    <link rel="stylesheet" href="style\jj.css">
+
+    <link rel="stylesheet" href="style\mostafa.css">
 </head>
 <body>
     <header class="header">
         <img class="logo" src="img\logo.png" alt="logo">
-        <nav>
+        <nav class="header3">
             <ul>
-                <li><a id="home--js" class="actiev homeNav" href=#></a></li>
-                <li><a id="weer--js" class="weerNav" href=#></a></li>
-                <li><a id="licht--js" class="lichtNav" href=#></a></li>
-                <li><a id="temperatuur--js" class="temperatuurNav" href=#></a></li>
+                <li><a id="home--js" class="actiev homeNav" >
+                  <span class="material-symbols-outlined">
+                    home
+                    </span>
+                </a></li>
+                <li><a id="weer--js" class="weerNav" >
+                  <span class="material-symbols-outlined">
+                    sunny
+                    </span>
+                </a></li>
+                <li><a id="licht--js" class="lichtNav" >
+                  <span class="material-symbols-outlined">
+                    electric_bolt
+                    </span>
+                </a></li>
+                <li><a id="temperatuur--js" class="temperatuurNav" >
+                  <span class="material-symbols-outlined">
+                    device_thermostat
+                    </span>
+                </a></li>
             </ul>
         </nav>
         <section class="date">
@@ -37,42 +59,221 @@
     <butten class="home"></butten>
     <section id="main--js" class="mainScreen">
 
-        <section class="tegels lang"></section>
+        <section class="tegels lang">
+          <p>Lichtsterkte</p>
+          <span class="material-symbols-outlined">
+            weekend
+            </span>
+          <span id="value"></span>
+          <input  type="range" min="0" max="100" value="0" id="myRange" class="slider">
+          
+          <span class="material-symbols-outlined">
+            countertops
+            </span>
+          <span id="value1"></span>
+          <input type="range" min="0" max="100" value="0" id="myRange1" class="slider1">
+         
+          <span class="material-symbols-outlined">
+            bed
+            </span>
+          <span id="value2"></span>
+          <input type="range" min="0" max="100" value="0" id="myRange2" class="slider2">
+          
+          <span class="material-symbols-outlined">
+            bathtub
+            </span>
+          <span id="value3"></span>
+          <input type="range" min="0" max="100" value="0" id="myRange3" class="slider3">
+        </section>
         <section class="tweeRij">
-        <section class="tegels tweede"></section>
-        <section class="tegels drie"></section>
+        <section class="tegels tweede">
+          <canvas id="js--chart--1"></canvas>
+        </section>
+        <section class="tegels drie">
+          <p>Binnentemperatuur</p>
+          <section class="Binnentemperatuur">
+            <div>
+            <span class="material-symbols-outlined">
+              weekend
+            </span>
+            <p>15°</p>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">
+              countertops
+            </span>
+            <p>20°</p>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">
+              bed
+            </span>
+            <p>19°</p>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">
+              bathtub
+            </span>
+            <p>30°</p>
+          </div>
+          </section>
+        </section>
         </section>
         <section class="vierdeRij">
-            <section class="derdeRij">
-                <section class="tegels vier">
-                    <section class="opkomst">
-                        <img class="zon" src="img\Naamloos-1.png" alt="">
-                        <p>05:00</p>
-                    </section>
-                    <section class="ondergang">
-                        <img class="zon" src="img\Naamloos-2.png" alt="">
-                        <p>19:30</p>
-                    </section>
-                </section>
-                <section class="tegels vijf">
-                    <section class="opkomst">
-                    <img class="zon" src="img\Naamloos-3.png" alt="">
-                    <p>15*</p>
+          <section class="derdeRij">
+            <section class="tegels vier">
+                <section class="opkomst">
+                    <img class="zon" src="img\Naamloos-1.png" alt="">
+                    <p id="op"></p>
                 </section>
                 <section class="ondergang">
-                    <img class="huis" src="img\Naamloos-4.png" alt="">
-                    <p>20*</p>
-                </section>
+                    <img class="zon" src="img\Naamloos-2.png" alt="">
+                    <p id="onder"></p>
                 </section>
             </section>
-            <section class="tegels zes"></section>
+            <section class="tegels vijf">
+                <section class="opkomst">
+                <img class="zon" src="img\Naamloos-3.png" alt="">
+                <p class="temp"id="temp"></p>
+            </section>
+            <section class="ondergang">
+                <img class="huis" src="img/location.png" alt="">
+                <p class="wolk"id="wolk"></p>
+            </section>
+            </section>
+        </section>
+            <section class="tegels zes">
+                <p>Energie verbruik apparaten</p>
+                <section class="EnergieVerbruik">
+                    <div id="microwave--js" style="background:#E66666; border-top-left-radius: .5rem; border-bottom-left-radius: .5rem; width: 4rem;" class="apparaatKleur1"></div>
+                    <div id="oven--js" style="background:#E16E29; width: 4rem;" class="apparaatKleur1"></div>
+                    <div id="koelkast--js" style="background:#4DE1F2; width: 4rem;" class="apparaatKleur1"></div>
+                    <div id="tv--js" style="background:#ECD76D; width: 4rem;" class="apparaatKleur1"></div>
+                    <div id="wasmachine--js" style="background:#57F2D7; width: 4rem;" class="apparaatKleur1"></div>
+                    <div id="overig--js" style="background:#ECCD82; border-top-right-radius: .5rem; border-bottom-right-radius: .5rem; width: 4rem;" class="apparaatKleur1"></div>
+                </section>
+                <section class="EnergieVerbruikApparaten">
+                    <div style="background:#E66666;" class="apparaatKleur"></div>
+                    <div style="background:#E16E29;" class="apparaatKleur"></div>
+                    <div style="background:#4DE1F2;" class="apparaatKleur"></div>
+                    <div style="background:#ECD76D;" class="apparaatKleur"></div>
+                    <div style="background:#57F2D7;" class="apparaatKleur"></div>
+                    <div style="background:#ECCD82;" class="apparaatKleur"></div>
+                </section>
+                <section class="apparaatIcons">
+                  <span class="material-symbols-outlined">
+                    microwave
+                    </span>         
+                    <span class="material-symbols-outlined">
+                      oven_gen
+                      </span>
+                      <span class="material-symbols-outlined">
+                        kitchen
+                        </span>
+                        <span class="material-symbols-outlined">
+                          tv_gen
+                          </span>       
+                          <span class="material-symbols-outlined">
+                            local_laundry_service
+                            </span>                    
+                                                                                                           
+                    <p>Overig</p>
+                </section>
+            </section>
     </section>
     </section>
     <section id="weerScreen--js" class="weerScreen">
+      <section class="tegels weer2">
+        <div>
+        <span class="material-symbols-outlined">
+          device_thermostat
+          </span>
+        <p>temperatuur</p>
+        <p id="temp2"></p>
+      </div>
+      <div>
+        <span class="material-symbols-outlined">
+          air
+          </span>
+        <p>windsnelheid</p>
+        <p id="wind"></p>
+      </div>
+      <div>
+        <span class="material-symbols-outlined">
+          open_with
+          </span>
+        <p>windrichting</p>
+        <p id="richting"></p>
+      </div>
+      <div>
+        <span class="material-symbols-outlined">
+          cloudy
+          </span>
+        <p>weercode</p>
+        <p id="code"></p>
+      </div>
+      </section>
+      <section class="tegels weer3">
+        <p id="weer__news"></p>
+      </section>
     </section>
     <section id="lichtScreen--js" class="lichtScreen">
+      <section class="tegels kw">
+        <p>Energie verbruik apparaten</p>
+        <div class="kwtwee"><span class="material-symbols-outlined">
+          microwave
+          </span>  
+        <p class="kwBedrag">1</p></div>             
+        <div class="kwtwee"><span class="material-symbols-outlined">
+          oven_gen
+          </span>
+        <p class="kwBedrag">1</p></div> 
+        <div class="kwtwee"><span class="material-symbols-outlined">
+          kitchen
+          </span>
+        <p class="kwBedrag">1</p></div>   
+        <div class="kwtwee"><span class="material-symbols-outlined">
+          tv_gen
+          </span> 
+        <p class="kwBedrag">1</p></div>
+        <div class="kwtwee"><span class="material-symbols-outlined">
+          local_laundry_service
+          </span>  
+        <p class="kwBedrag">1</p></div>  
+        <div class="kwtwee"><p>Overig</p>
+        <p class="kwBedrag">1</p></div> 
+      </section>
+      <section class="tegels"></section>
     </section>
     <section id="temperatuurScreen--js" class="temperatuurScreen">
     </section>
+
+
+    <footer class="header2">
+      <nav>
+        <ul>
+          <li><a id="home2--js" class="actiev homeNav" >
+            <span class="material-symbols-outlined">
+              home
+              </span>
+          </a></li>
+          <li><a id="weer2--js" class="weerNav" >
+            <span class="material-symbols-outlined">
+              sunny
+              </span>
+          </a></li>
+          <li><a id="licht2--js" class="lichtNav" >
+            <span class="material-symbols-outlined">
+              electric_bolt
+              </span>
+          </a></li>
+          <li><a id="temperatuur2--js" class="temperatuurNav" >
+            <span class="material-symbols-outlined">
+              device_thermostat
+              </span>
+          </a></li>
+        </ul>
+    </nav>
+    </footern>
 </body>
 </html>
