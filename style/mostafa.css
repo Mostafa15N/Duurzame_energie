@@ -5,7 +5,7 @@ align-items: center;
 padding-top: 1.5rem;
 flex-direction: column;
 gap: 2rem;
-color: #707070;
+color: var(--color-tekst);
 }
 .drie{
     gap: 3rem;
@@ -46,6 +46,13 @@ gap: 1rem;
 align-items: center;
 justify-content: center;
 width: 15rem;
+}
+
+.kw2{
+    width: 45rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .kwtwee{

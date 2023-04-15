@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style\style.css">
     <link rel="stylesheet" href="style\weer.css">
     <link rel="stylesheet" href="style\jj.css">
-
+    <link rel="stylesheet" href="style\dark.css">
     <link rel="stylesheet" href="style\mostafa.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
                 </a></li>
                 <li><a id="temperatuur--js" class="temperatuurNav" >
                   <span class="material-symbols-outlined">
-                    device_thermostat
+                    settings
                     </span>
                 </a></li>
             </ul>
@@ -133,12 +133,12 @@
             </section>
             <section class="tegels vijf">
                 <section class="opkomst">
-                <img class="zon" src="img\Naamloos-3.png" alt="">
-                <p class="temp"id="temp"></p>
+                <img id="weer__js" class="zon2" src="" alt="">
+                
             </section>
-            <section class="ondergang">
-                <img class="huis" src="img/location.png" alt="">
+            <section class="ondergang  gap">
                 <p class="wolk"id="wolk"></p>
+                <p class="temp"id="temp"></p>
             </section>
             </section>
         </section>
@@ -213,9 +213,16 @@
         <p id="code"></p>
       </div>
       </section>
-      <section class="tegels weer3">
-        <p id="weer__news"></p>
-      </section>
+      <section class="tegels vier">
+        <section class="opkomst">
+            <img class="zon" src="img\Naamloos-1.png" alt="">
+            <p id="op"></p>
+        </section>
+        <section class="ondergang">
+            <img class="zon" src="img\Naamloos-2.png" alt="">
+            <p id="onder"></p>
+        </section>
+    </section>
     </section>
     <section id="lichtScreen--js" class="lichtScreen">
       <section class="tegels kw">
@@ -223,29 +230,42 @@
         <div class="kwtwee"><span class="material-symbols-outlined">
           microwave
           </span>  
-        <p class="kwBedrag">1</p></div>             
+        <p id="kw__microwave">1</p></div>             
         <div class="kwtwee"><span class="material-symbols-outlined">
           oven_gen
           </span>
-        <p class="kwBedrag">1</p></div> 
+        <p id="kw__oven">1</p></div> 
         <div class="kwtwee"><span class="material-symbols-outlined">
           kitchen
           </span>
-        <p class="kwBedrag">1</p></div>   
+        <p id="kw__koelkast">1</p></div>   
         <div class="kwtwee"><span class="material-symbols-outlined">
           tv_gen
           </span> 
-        <p class="kwBedrag">1</p></div>
+        <p id="kw__tv">1</p></div>
         <div class="kwtwee"><span class="material-symbols-outlined">
           local_laundry_service
           </span>  
-        <p class="kwBedrag">1</p></div>  
+        <p id="kw__wasmachine">1</p></div>  
         <div class="kwtwee"><p>Overig</p>
-        <p class="kwBedrag">1</p></div> 
+        <p id="kw__overig">1</p></div> 
       </section>
-      <section class="tegels"></section>
+      <section class="tegels kw2">
+        <canvas id="js--chart--2"></canvas>
+      </section>
     </section>
     <section id="temperatuurScreen--js" class="temperatuurScreen">
+      <section class="tegels settings__tegels">
+        <p>Licht/Donker</p>
+      <input type="checkbox" id="toggle" class="toggle--checkbox" onclick="toggle()">
+        <label for="toggle" class="toggle--label">
+          <span class="toggle--label-background"></span>
+        </label>
+        <div class="background"></div>
+        </section>
+        <section class="tegels settings__tegels">
+        </section>
+        <section class="tegels settings__tegels"></section>
     </section>
 
 

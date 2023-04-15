@@ -26,7 +26,7 @@ weer.onclick = function( ) {
     temperatuurScreen.style.display = "none";
     lichtScreen.style.display = "none";
     weerScreen.style.display = "flex";
-    weer.style.background = "#FFFFFF";
+    weer.style.background = "var(--color-main)";
     home.style.background = "#57F2D7";
     temperatuur.style.background = "#E66666";
     licht.style.background = "#ECD76D";
@@ -38,7 +38,7 @@ home.onclick = function( ) {
     lichtScreen.style.display = "none";
     temperatuurScreen.style.display = "none";
     weer.style.background = "#4FDFF0";
-    home.style.background = "#FFFFFF";
+    home.style.background = "var(--color-main)";
     temperatuur.style.background = "#E66666";
     licht.style.background = "#ECD76D";
 }
@@ -51,7 +51,7 @@ licht.onclick = function( ) {
     weer.style.background = "#4FDFF0";
     home.style.background = "#57F2D7";
     temperatuur.style.background = "#E66666";
-    licht.style.background = "#FFFFFF";
+    licht.style.background = "var(--color-main)";
 }
 
 temperatuur.onclick = function( ) {
@@ -61,7 +61,7 @@ temperatuur.onclick = function( ) {
     main.style.display = "none";
     weer.style.background = "#4FDFF0";
     home.style.background = "#57F2D7";
-    temperatuur.style.background = "#FFFFFF";
+    temperatuur.style.background = "var(--color-main)";
     licht.style.background = "#ECD76D";
 }
 weer2.onclick = function( ) {
@@ -69,7 +69,7 @@ weer2.onclick = function( ) {
     temperatuurScreen.style.display = "none";
     lichtScreen.style.display = "none";
     weerScreen.style.display = "flex";
-    weer2.style.background = "#FFFFFF";
+    weer2.style.background = "var(--color-main)";
     home2.style.background = "#57F2D7";
     temperatuur2.style.background = "#E66666";
     licht2.style.background = "#ECD76D";
@@ -81,7 +81,7 @@ home2.onclick = function( ) {
     lichtScreen.style.display = "none";
     temperatuurScreen.style.display = "none";
     weer2.style.background = "#4FDFF0";
-    home2.style.background = "#FFFFFF";
+    home2.style.background = "var(--color-main)";
     temperatuur2.style.background = "#E66666";
     licht2.style.background = "#ECD76D";
 }
@@ -94,7 +94,7 @@ licht2.onclick = function( ) {
     weer2.style.background = "#4FDFF0";
     home2.style.background = "#57F2D7";
     temperatuur2.style.background = "#E66666";
-    licht2.style.background = "#FFFFFF";
+    licht2.style.background = "var(--color-main)";
 }
 
 temperatuur2.onclick = function( ) {
@@ -104,7 +104,7 @@ temperatuur2.onclick = function( ) {
     main.style.display = "none";
     weer2.style.background = "#4FDFF0";
     home2.style.background = "#57F2D7";
-    temperatuur2.style.background = "#FFFFFF";
+    temperatuur2.style.background = "var(--color-main)";
     licht2.style.background = "#ECD76D";
 }
 
@@ -114,7 +114,14 @@ const koelkast = document.getElementById("koelkast--js");
 const tv = document.getElementById("tv--js");
 const wasmachine = document.getElementById("wasmachine--js");
 const overig = document.getElementById("overig--js");
-const kwtwee = document.getElementsByClassName("kwtwee");
+
+const kw__microwave = document.getElementById("kw__microwave");
+const kw__oven = document.getElementById("kw__oven");
+const kw__koelkast = document.getElementById("kw__koelkast");
+const kw__tv = document.getElementById("kw__tv");
+const kw__wasmachine = document.getElementById("kw__wasmachine");
+const kw__overig = document.getElementById("kw__overig");
+
 
 const value1 = document.getElementById("value");
 const value2 = document.getElementById("value1");
@@ -134,10 +141,19 @@ let data = fetch("../data.json").then(
             tv.style.width = .24*(100/totaal*echteData.tv) + "rem";
             wasmachine.style.width = .24*(100/totaal*echteData.wasmachine) + "rem";
             overig.style.width = .24*(100/totaal*echteData.overig) + "rem";
+
+            kw__microwave.innerHTML = echteData.microwave+(" watt");
+            kw__oven.innerHTML = echteData.oven+(" watt");
+            kw__koelkast.innerHTML = echteData.koelkast+(" watt");
+            kw__tv.innerHTML = echteData.tv+(" watt");
+            kw__wasmachine.innerHTML = echteData.wasmachine+(" watt");
+            kw__overig.innerHTML = echteData.overig+(" watt");
+
             value1.innerHTML = echteData.woonkamer;
             value2.innerHTML = echteData.keuken;
             value3.innerHTML = echteData.slaapkamer;
             value4.innerHTML = echteData.badkamer;
+
         }
     );
 
@@ -219,6 +235,8 @@ const wind = document.getElementById("wind")
 const richting = document.getElementById("richting")
 const code = document.getElementById("code")
 const weer__news = document.getElementById("weer__news")
+let weer__js = document.getElementById("weer__js")
+
 let tempcheck = fetch("https://api.open-meteo.com/v1/forecast?latitude=52.25&longitude=5.75&hourly=temperature_2m&daily=sunrise,sunset&timezone=auto&current_weather=true")
 .then(function(response){
    return response.json();
@@ -232,6 +250,36 @@ let tempcheck = fetch("https://api.open-meteo.com/v1/forecast?latitude=52.25&lon
    code.innerHTML= realData.current_weather.weathercode;
    ondergang.innerHTML=realData.daily.sunset[0];
    opkomst.innerHTML=realData.daily.sunrise[0];
+
+    if(realData.current_weather.weathercode >= 00 && realData.current_weather.weathercode <= 19){
+        weer__js.src = "img/Naamloos-3.png";
+    }
+    else if(realData.current_weather.weathercode >= 79 && realData.current_weather.weathercode <= 99){
+        weer__js.src= "img/thunderstorm_FILL0_wght400_GRAD0_opsz48.png";
+    }
+
+    else if(realData.current_weather.weathercode >= 19 && realData.current_weather.weathercode <= 30){
+        weer__js.src= "img/cloudy_snowing_FILL0_wght400_GRAD0_opsz48.png";
+    }
+
+    else if(realData.current_weather.weathercode >= 29 && realData.current_weather.weathercode <= 40){
+        weer__js.src= "img/air_FILL0_wght400_GRAD0_opsz48.png";
+    }
+
+    else if(realData.current_weather.weathercode >= 39 && realData.current_weather.weathercode <= 50){
+        weer__js.src= "img/foggy_FILL0_wght400_GRAD0_opsz48.png";
+    }
+
+    else if(realData.current_weather.weathercode >= 49 && realData.current_weather.weathercode <= 60){
+        weer__js.src= "img/rainy_light_FILL0_wght400_GRAD0_opsz48.png";
+    }
+    else if(realData.current_weather.weathercode >= 59 && realData.current_weather.weathercode <= 70){
+        weer__js.src= "img/rainy_FILL0_wght400_GRAD0_opsz48.png";
+    }
+
+    else if(realData.current_weather.weathercode >= 69 && realData.current_weather.weathercode <= 80){
+        weer__js.src= "img/cloudy_snowing_FILL0_wght400_GRAD0_opsz48.png";
+    }
 })
 
 let tempcheck2 = fetch("https://weerlive.nl/api/json-data-10min.php?key=demo&locatie=Amsterdam")
@@ -240,36 +288,77 @@ let tempcheck2 = fetch("https://weerlive.nl/api/json-data-10min.php?key=demo&loc
  })
  .then(function(realData){
      console.log(realData);
-     wolk.innerHTML=realData.liveweer[0].image ;
-     weer__news.innerHTML=realData.liveweer[0].alarmtxt ;
+     wolk.innerHTML=realData.liveweer[0].image;
  })
 
 
 
  const labels = [
-    'Playstation 2',
-    'Gamecube',
-    'Nintendo DS',
-    'Nintendo Switch', 
-    'Playstation 4 Pro',
+    'Licht',
+    'Verwarming',
+    'Verkoeling',
+    'Water ', 
+    'Overig',
  ];
  
  const data2 = {
    labels: labels,
    datasets:  [{
-     label: "Most played consoles in hours",
-     data: [10000, 5000, 6000, 1000, 2000],
-     backgroundColors: ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#F47389']
+     label: "Energie verbruik",
+     data: [1000, 500, 600, 1000, 400],
+     backgroundColor: ['#ECD76D', '#E16E29', '#E66666', '#4DE1F2', '#57F2D7'],
    }]
    }
  
  const config = {
    type: 'pie',
    data: data2,
-   maintainAspectRatio: false,
+   borderAlign: 'inner',
  };
  
  new Chart(
    document.getElementById("js--chart--1"),
    config
  );
+
+ const labelsenergy = [
+    'microwave',
+    'oven',
+    'koelkast',
+    'tv',
+    'wasmachine',
+ ];
+ 
+ const data3 = {
+   labels: labels,
+   datasets:  [{
+     label: "Energie verbruik apparaten",
+     data: [800, 1400, 33, 35, 1000],
+     backgroundColor: ['#ECD76D', '#E16E29', '#E66666', '#4DE1F2', '#57F2D7'],
+   }]
+   }
+ 
+ const config2 = {
+   type: 'bar',
+   data: data3,
+ };
+ 
+ new Chart(
+   document.getElementById("js--chart--2"),
+   config2
+ );
+
+
+
+ //darkmode//
+ 
+
+
+function toggle() {
+
+    const darkmode = document.getElementById("toggle");
+
+    if (darkmode.checked == true){
+        console.log("ik werk")
+    }
+}

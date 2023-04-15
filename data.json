@@ -1,10 +1,9 @@
 {
 "microwave": 800,
-"oven": 1400,
-"koelkast": 33,
-"tv": 35,
-"wasmachine": 1000,
-
+"oven": 700,
+"koelkast": 500,
+"tv": 300,
+"wasmachine": 400,
 "overig": 300,
 "woonkamer":50,
 "keuken": 100,
